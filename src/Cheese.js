@@ -1,4 +1,4 @@
-const sequelize = require('./db'); //import connection
+const { Sequelize, sequelize} = require('./db'); //import connection
 const { DataTypes } = require('sequelize'); //Object destructuring
 
 //Define the Cheese model
@@ -8,4 +8,4 @@ const Cheese = sequelize.define('Cheese', {
     description: DataTypes.STRING
 });
 
-module.exports = Cheese;
+module.exports = { Cheese };

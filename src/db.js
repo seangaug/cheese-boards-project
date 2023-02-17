@@ -1,6 +1,6 @@
 //create new sequelize connection
 
-const { Sequelize } = require('sequelize'); //Object destructuring. PUlling out key of Sequ
+const { Sequelize, Model } = require('sequelize'); //Object destructuring. Pulling out key of Sequ
 const path = require('path');
 
 const sequelize = new Sequelize({
@@ -8,4 +8,7 @@ const sequelize = new Sequelize({
     storage: path.join(__dirname, 'db.sqlite') // join locations of the file
 });
 
-module.exports = sequelize; //export connection to be used elsewhere
+module.exports = {
+    sequelize,
+    Sequelize
+}; //export connection to be used elsewhere
